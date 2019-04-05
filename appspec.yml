@@ -1,13 +1,14 @@
 version: 0.0
 os: linux
 files:
-  - source: /index.js
-    destination: /home/ubuntu/
+  - source: nodejs-docs-hello-world
+    destination: /home/ubuntu/nodejs-docs-hello-world
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies
       timeout: 3600
       runas: ubuntu
+  ApplicationStart:
     - location: scripts/start_server
       timeout: 3600
       runas: ubuntu
