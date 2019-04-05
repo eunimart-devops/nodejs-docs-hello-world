@@ -1,0 +1,13 @@
+version: 0.0
+os: ubuntu
+files:
+  - source: /index.js
+    destination: /home/ubuntu/
+hooks:
+  BeforeInstall:
+    - location: scripts/install_dependencies
+      timeout: 3600
+      runas: root
+    - location: scripts/start_server
+      timeout: 3600
+      runas: root
